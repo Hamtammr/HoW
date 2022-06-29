@@ -21,18 +21,18 @@ public class MainActivity extends AppCompatActivity {
                 openJogadores();
             }
         });
-        button = (Button) findViewById(R.id.charBtn);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openPersonagens();
-            }
-        });
         button = (Button) findViewById(R.id.campBtn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openCampanhas();
+            }
+        });
+        button = (Button) findViewById(R.id.charBtn);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openPersonagens();
             }
         });
     }

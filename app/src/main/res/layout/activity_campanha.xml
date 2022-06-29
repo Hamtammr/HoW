@@ -55,7 +55,7 @@
         android:layout_marginBottom="45dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/_dynamic"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName9" />
+        app:layout_constraintEnd_toStartOf="@+id/idPerso" />
 
     <Button
         android:id="@+id/saveCamp"
@@ -72,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName8" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName9"
+        android:id="@+id/idPerso"
         android:layout_width="91dp"
         android:layout_height="0dp"
         android:layout_marginBottom="4dp"
@@ -93,7 +93,7 @@
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="61dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName9"
+        app:layout_constraintBottom_toBottomOf="@+id/idPerso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/saveCamp" />

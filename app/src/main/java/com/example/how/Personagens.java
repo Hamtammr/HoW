@@ -14,7 +14,7 @@ public class Personagens extends AppCompatActivity {
     // Botões - tela Personagens
 
     Button btnSalvarChar, btnExcluirChar;
-    EditText nomeChar, racaChar, classeChar;
+    EditText nomeChar, racaChar, classeChar,idChar;
     ListView listaChar;
 
     @Override
@@ -22,11 +22,12 @@ public class Personagens extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personagens);
 
-        btnSalvarChar.findViewById(R.id.btnSalvarPerso);
-        btnExcluirChar.findViewById(R.id.btnExcluirPerso);
-        nomeChar.findViewById(R.id.nomePerso);
-        racaChar.findViewById(R.id.racaPerso);
-        classeChar.findViewById(R.id.classePerso);
+        btnSalvarChar = findViewById(R.id.btnSalvarPerso);
+        btnExcluirChar = findViewById(R.id.btnExcluirPerso);
+        nomeChar = findViewById(R.id.nomePerso);
+        racaChar = findViewById(R.id.racaPerso);
+        classeChar = findViewById(R.id.classePerso);
+        idChar = findViewById((R.id.idPerso));
 
         //Listeners
 
