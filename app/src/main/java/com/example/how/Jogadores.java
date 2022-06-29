@@ -22,12 +22,12 @@ public class Jogadores extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jogadores);
 
-        btnSalvarJog = findViewById(R.id.btnSalvarPerso);
-        btnExcluirJog = findViewById(R.id.btnExcluirJog);
-        nomeJogador = findViewById(R.id.nomePerso);
-        idadeJogador = findViewById(R.id.racaPerso);
+        btnSalvarJog = findViewById(R.id.btnSalvarJoga);
+        btnExcluirJog = findViewById(R.id.btnExcluirJoga);
+        nomeJogador = findViewById(R.id.nomeJoga);
+        idadeJogador = findViewById(R.id.idadeJoga);
 
-        //listeners
+        //Listeners
 
         btnSalvarJog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +40,8 @@ public class Jogadores extends AppCompatActivity {
 
                     Toast.makeText(Jogadores.this, jogador.toString(), Toast.LENGTH_SHORT).show();
 
-                }catch (Exception e){
+                }
+                catch (Exception e){
                     Toast.makeText(Jogadores.this, "Error", Toast.LENGTH_SHORT).show();
                     jogador = new Jogador(-1,"erro",0);
 
@@ -60,7 +61,6 @@ public class Jogadores extends AppCompatActivity {
                 Toast.makeText(Jogadores.this, "BLABLALBA", Toast.LENGTH_SHORT).show();
             }
         });
-
 
     }
 }
