@@ -53,15 +53,15 @@ public class DBHelper extends SQLiteOpenHelper {
     // Comando para atualização do banco de dados
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("DRROP TABLE IF EXISTS "+TABELA_JOGADOR);
-        db.execSQL("DRROP TABLE IF EXISTS "+TABELA_PERSONAGEM);
-        db.execSQL("DRROP TABLE IF EXISTS "+TABELA_CAMPANHA);
+        db.execSQL("DROP TABLE IF EXISTS "+TABELA_JOGADOR);
+        db.execSQL("DROP TABLE IF EXISTS "+TABELA_PERSONAGEM);
+        db.execSQL("DROP TABLE IF EXISTS "+TABELA_CAMPANHA);
         onCreate(db);
 
 
     }
 
-    // Inserção dos dados referentes ao objeto Jogador na tabela
+    // Comandos para manipular os dados da tabela de Jogadores
 
     public boolean addJogador(Jogador jogador){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -77,8 +77,12 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+    // ---------------------------------------------------------------------------------------------
 
-    // Inserção dos dados referentes ao objeto Personagem na tabela
+
+
+
+    // Comandos para manipular os dados da tabel de Personagens
 
     public boolean addPersonagem(Personagem personagem) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -96,31 +100,66 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public List<Personagem> getPersonagens() {
+    public List<Personagem> getPersonagens(){
         List<Personagem> returnList = new ArrayList<>();
 
         String queryString = "SELECT * FROM "+ TABELA_PERSONAGEM;
         SQLiteDatabase db = this.getReadableDatabase();
+
         Cursor cursor = db.rawQuery(queryString, null);
 
         if (cursor.moveToFirst()){
-
             do {
-                int IDpersonagem = cursor.getInt(0);
-                String nomePersonagem = cursor.getString(1);
-                String classePersonagem = cursor.getString(2);
-                String racaPersonagem = cursor.getString(3);
+                int personagemID = cursor.getInt(0);
+                String personagemNome = cursor.getString(1);
+                String personagemClasse = cursor.getString(2);
+                String personagemRaca = cursor.getString(3);
 
-                Personagem novoPersonagem = new Personagem(IDpersonagem, nomePersonagem, classePersonagem, racaPersonagem);
-                returnList.add(novoPersonagem);
+                Personagem newPersonagem = new Personagem(personagemID, personagemNome, personagemClasse, personagemRaca);
+                returnList.add(newPersonagem);
 
             }while (cursor.moveToNext());
-
         }
-
+        else{
+            //Não adiciona nada
+        }
         cursor.close();
         db.close();
 
-        return  returnList;
+        return returnList;
+
+    };
+
+    public boolean deletePersonagem(Personagem personagem){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String queryString = "DELETE FROM " + TABELA_PERSONAGEM + " WHERE " + COL_IDPERSONAGEM + " = " + personagem.getIDPersonagem();
+
+        Cursor cursor = db.rawQuery(queryString, null);
+
+        if (cursor.moveToFirst()){
+            return true;
+        }else {
+            return false;
+        }
     }
+
+
+    public void updatePersonagem(String nomeOriginalChar, String nomeChar, String classeChar, String racaChar) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(COL_NOME_PERSONAGEM, nomeChar);
+        values.put(COL_CLASSE, classeChar);
+        values.put(COL_RACA, racaChar);
+
+        db.update(TABELA_PERSONAGEM,values,"name=?", new String[]{nomeOriginalChar});
+        db.close();
+
+    }
+
+
+    //----------------------------------------------------------------------------------------------
+
+
 }

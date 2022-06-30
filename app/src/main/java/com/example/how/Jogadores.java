@@ -13,8 +13,8 @@ public class Jogadores extends AppCompatActivity {
 
     // Botões - tela Jogadores
 
-    Button btnSalvarJog, btnExcluirJog;
-    EditText nomeJogador, idadeJogador;
+    Button btnSalvarPlayer;
+    EditText nomePlayer, idadePlayer;
     ListView listaJogador;
 
     @Override
@@ -22,21 +22,20 @@ public class Jogadores extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jogadores);
 
-        btnSalvarJog = findViewById(R.id.btnSalvarJoga);
-        btnExcluirJog = findViewById(R.id.btnExcluirJoga);
-        nomeJogador = findViewById(R.id.nomeJoga);
-        idadeJogador = findViewById(R.id.idadeJoga);
+        btnSalvarPlayer = findViewById(R.id.btnSalvarJoga);
+        nomePlayer = findViewById(R.id.nomeJoga);
+        idadePlayer = findViewById(R.id.idadeJoga);
 
         //Listeners
 
-        btnSalvarJog.setOnClickListener(new View.OnClickListener() {
+        btnSalvarPlayer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Jogador jogador;
 
                 try {
-                    jogador = new Jogador(1,nomeJogador.getText().toString(), Integer.parseInt(idadeJogador.getText().toString()));
+                    jogador = new Jogador(1,nomePlayer.getText().toString(), Integer.parseInt(idadePlayer.getText().toString()));
 
                     Toast.makeText(Jogadores.this, jogador.toString(), Toast.LENGTH_SHORT).show();
 
@@ -55,12 +54,12 @@ public class Jogadores extends AppCompatActivity {
             }
         });
 
-        btnExcluirJog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Jogadores.this, "BLABLALBA", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        btnExcluirJog.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(Jogadores.this, "BLABLALBA", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
     }
 }

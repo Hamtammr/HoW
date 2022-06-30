@@ -14,17 +14,20 @@
         android:theme="@style/Theme.HoW"
         tools:targetApi="31">
         <activity
-            android:name=".Personagens"
-            android:label="Personagens"
+            android:name=".EditarPersonagens"
             android:exported="false" />
+        <activity
+            android:name=".Personagens"
+            android:exported="false"
+            android:label="Personagens" />
         <activity
             android:name=".Jogadores"
-            android:label="Jogadores"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Jogadores" />
         <activity
             android:name=".Campanhas"
-            android:label="Campanhas"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Campanhas" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

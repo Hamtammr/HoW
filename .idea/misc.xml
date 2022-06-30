@@ -4,10 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/hamta/AndroidStudioProjects/HoW/app/src/main/res/layout/activity_campanha.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/hamta/AndroidStudioProjects/HoW/app/src/main/res/layout/activity_editar_personagens.xml" value="0.2046875" />
         <entry key="..\:/Users/hamta/AndroidStudioProjects/HoW/app/src/main/res/layout/activity_jogadores.xml" value="0.25" />
         <entry key="..\:/Users/hamta/AndroidStudioProjects/HoW/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/hamta/AndroidStudioProjects/HoW/app/src/main/res/layout/activity_personagem.xml" value="0.2046875" />
-        <entry key="..\:/Users/hamta/AndroidStudioProjects/HoW/app/src/main/res/layout/activity_personagens.xml" value="0.22" />
+        <entry key="..\:/Users/hamta/AndroidStudioProjects/HoW/app/src/main/res/layout/activity_personagens.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/hamta/AndroidStudioProjects/HoW/app/src/main/res/layout/activity_players.xml" value="0.22402736212056434" />
       </map>
     </option>
